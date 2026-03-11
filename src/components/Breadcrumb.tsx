@@ -10,6 +10,10 @@ const Breadcrumb = ({ selectedProvince, selectedCity, selectedDistrict }: Breadc
     const breadcrumb = [selectedProvince, selectedCity, selectedDistrict].filter(Boolean);
     return (
         <div className="flex items-center font-semibold text-sm text-gray-400">
+            <div>
+                <span className="hover:text-blue-600 cursor-pointer mr-2">Indonesia</span>
+                <span className="hover:text-blue-600 cursor-pointer mr-2">{">"}</span>
+            </div>
             {breadcrumb.map((item, index) => (
                 <div key={index} className="flex items-center">
                     <span

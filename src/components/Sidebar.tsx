@@ -11,7 +11,7 @@ interface SidebarProps {
     setSelectedDistrict: (val: Option | undefined) => void;
 }
 
-const Sidebar = ({selectedProvince, selectedCity, selectedDistrict, setSelectedProvince, setSelectedCity, setSelectedDistrict}: SidebarProps) => {
+const Sidebar = ({ selectedProvince, selectedCity, selectedDistrict, setSelectedProvince, setSelectedCity, setSelectedDistrict }: SidebarProps) => {
 
     const [responseData, setResponseData] = useState(null);
 
@@ -69,10 +69,13 @@ const Sidebar = ({selectedProvince, selectedCity, selectedDistrict, setSelectedP
     }
 
     return (
-        <div className="flex flex-col w-70 h-screen border-r-2 border-gray-200 px-4 py-4">
-            <p className="font-bold mb-8">
-                Frontend Assessment
-            </p>
+        <div className="flex flex-col w-72 h-screen border-r-2 border-gray-200 px-4 py-4">
+            <div className="flex mb-8 gap-2 items-center">
+                <img src="/globe.png" alt="arrow" className="w-8 bg-[#e2f0fb] rounded-xl" />
+                <p className="font-bold">
+                    Frontend Assessment
+                </p>
+            </div>
             <p className="text-gray-500 mb-2">
                 FILTER WILAYAH
             </p>
@@ -93,7 +96,7 @@ const Sidebar = ({selectedProvince, selectedCity, selectedDistrict, setSelectedP
                     placeholder={selectedProvince ? "Pilih kota..." : "Pilih provinsi dulu"}
                     disabled={!selectedProvince}
                 />
-                <SelectField 
+                <SelectField
                     label="KECAMATAN"
                     value={selectedDistrict?.id.toString() || ""}
                     onChange={handleDistrictChange}
@@ -103,7 +106,7 @@ const Sidebar = ({selectedProvince, selectedCity, selectedDistrict, setSelectedP
                 />
             </div>
 
-            <ButtonReset 
+            <ButtonReset
                 handleChange={handleButtonReset}
             />
         </div>

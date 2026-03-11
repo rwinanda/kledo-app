@@ -6,7 +6,7 @@ interface ContentProps {
     selectedDistrict: Option | undefined;
 }
 
-const Content = ({selectedProvince, selectedCity, selectedDistrict}: ContentProps) => {
+const Content = ({ selectedProvince, selectedCity, selectedDistrict }: ContentProps) => {
     return (
         <div className={`flex flex-col min-h-screen items-center py-20 gap-8`}>
             <div className={`flex flex-col gap-2 items-center justify-center ${selectedProvince?.name ? "" : "hidden"}`}>
@@ -19,6 +19,7 @@ const Content = ({selectedProvince, selectedCity, selectedDistrict}: ContentProp
             </div>
 
             <div className={`flex flex-col gap-2 items-center justify-center ${selectedCity?.name ? "" : "hidden"}`}>
+                <img src="/arrow.png" alt="arrow" className="mb-4"/>
                 <p className="text-xs text-[#68ade7]">
                     KOTA / KABUPATEN
                 </p>
@@ -28,6 +29,7 @@ const Content = ({selectedProvince, selectedCity, selectedDistrict}: ContentProp
             </div>
 
             <div className={`flex flex-col gap-2 items-center justify-center ${selectedDistrict?.name ? "" : "hidden"}`}>
+                <img src="/arrow.png" alt="arrow" className="mb-4"/>
                 <p className="text-xs text-[#68ade7]">
                     KECAMATAN
                 </p>
